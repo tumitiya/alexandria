@@ -18,6 +18,12 @@ body {
     align-items: center;
 }
 
+.add-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
 input, select, button {
     padding: 6px;
 }

@@ -6,7 +6,7 @@
     </head>
     <body>
         <h1> Alexandria</h1>
-        <form method="post">
+        <form method="post" class="add-form">
             <input type="text" name="title" placeholder="Title" required>
             <input type="text" name="site" placeholder="Site (e.g. Webtoons)">
             <input type="number" name="progress" placeholder="Chapter or Episode" required>
@@ -22,7 +22,7 @@
         </form>
         {% for entry in entries %}
         <div class="entry">
-            <p>{{entry.title}}, {{entry.type}}, {{entry.status}}, {{entry.site}}, Chapter/Episode {{entry.progress}}</p>
+            <p>{{entry.title}}, {{entry.type}}, {{entry.status | default("reading/watching")}}, {{entry.site}}, Chapter/Episode {{entry.progress}}</p>
             <div class="actions">
             <form method="post" action="/increment/{{entry.id}}">
                 <button type="submit">+1</button>
