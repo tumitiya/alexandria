@@ -32,6 +32,7 @@ def home():
         }
         next_id += 1
         entries.append(entry)
+        save_entries()
         return redirect("/")
     return render_template("index.html", entries=entries)
 
@@ -43,7 +44,7 @@ def increment(entry_id):
     save_entries()    
     return redirect("/")
 
-@app.route("/update/<int:entry_ids>", methods=["POST"])
+@app.route("/update/<int:entry_id>", methods=["POST"])
 def update(entry_id):
     for entry in entries:
         if entry["id"] == entry_id:
