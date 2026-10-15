@@ -13,7 +13,7 @@ def home():
             "title" : request.form["title"],
             "type": request.form["type"],
             "site": request.form["site"],
-            "progress": request.form["progress"],
+            "progress": int(request.form["progress"]),
         }
         next_id += 1
         entries.append(entry)
@@ -27,9 +27,8 @@ def increment(entry_id):
             entry["progress"] +=1
         return redirect("/")
 
-@app.route("/delete/<int:entry_id>", mehthods=["POST"])
+@app.route("/delete/<int:entry_id>", methods=["POST"])
 def delete(entry_id):
-    for entry in entries:
-        global entries
-        entries = [e for e in entries if e["id"] != entry_id]
-        return redirect("/")
+    global entries
+    entries = [e for e in entries if e["id"] != entry_id]
+    return redirect("/")
