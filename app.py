@@ -23,12 +23,19 @@ next_id = max([e["id"] for e in entries], default=0) + 1
 def home():
     global next_id
     if request.method == "POST":
+        title = request.form["title"].strip()
+        try:
+            progress = int(request.form["progress"])
+        except ValueError:
+            return redirect ("/")
+        if not title or progress < 0:
+            return redirect("/")
         entry = {
             "id": next_id,
             "title" : request.form["title"],
             "type": request.form["type"],
             "site": request.form["site"],
-            "progress": int(request.form["progress"]),
+            "progress": progress,
         }
         next_id += 1
         entries.append(entry)
@@ -46,9 +53,15 @@ def increment(entry_id):
 
 @app.route("/update/<int:entry_id>", methods=["POST"])
 def update(entry_id):
+    try:
+                progress = int(request.form["progress"])
+    except ValueError:
+                return redirect("/")
+    if progress < 0:
+                return redirect("/")
     for entry in entries:
-        if entry["id"] == entry_id:
-            entry["progress"] = int(request.form["progress"])
+            if entry["id"] == entry_id:
+                 entry["progress"] = progress
     save_entries()
     return redirect("/")
 

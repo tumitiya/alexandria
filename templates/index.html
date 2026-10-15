@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Alexandria</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"
     </head>
     <body>
         <h1> Alexandria</h1>
@@ -16,7 +17,9 @@
             <button type="submit">Add</button>
         </form>
         {% for entry in entries %}
+        <div class="entry">
             <p>{{entry.title}}, {{entry.type}}, {{entry.site}}, Chapter/Episode {{entry.progress}}</p>
+            <div class="actions">
             <form method="post" action="/increment/{{entry.id}}">
                 <button type="submit">+1</button>
             </form>
@@ -27,6 +30,8 @@
                 <input type="number" name="progress" value="{{entry.progress}}" min="0" required>
                 <button type="submit">Update</button>
             </form>
+            </div>
+        </div>    
         {% endfor %}
     </body>
 </html>
