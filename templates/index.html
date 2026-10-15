@@ -6,15 +6,23 @@
     <body>
         <h1> Alexandria</h1>
         <form method="post">
-            <input type="text" name="title" placeholder="Title">
+            <input type="text" name="title" placeholder="Title" required>
             <input type="text" name="site" placeholder="Site (e.g. Webtoons)">
-            <input type="number" name="progress" placeholder="Chapter or Episode">
+            <input type="number" name="progress" placeholder="Chapter or Episode" required>
             <select name="type">
                 <option>Manga</option>
                 <option>Show</option>
             </select>
             <button type="submit">Add</button>
         </form>
-        <p>Solo Leveling, Manga, Webtoon, Chapter 45</p>
+        {% for entry in entries %}
+            <p>{{entry.title}}, {{entry.type}}, {{entry.site}}, Chapter/Episode {{entry.progress}}</p>
+            <form method="post" action="/increment/{{entry.id}}">
+                <button type="submit">+1</button>
+            </form>
+            <form method="post" action="/delete/{{entry.id}}">
+                <button type="submit">Delete</button>
+            </form>
+        {% endfor %}
     </body>
 </html>
