@@ -10,7 +10,7 @@ This is a web app for tracking the manga and shows you're reading or watching: t
 - Entries are saved to a JSON file, so they persist between sessions
 
 ## Built with
-Python, Flask, HTML, CSS, Jinja templates
+Python, Flask, HTML, CSS, Jinja templates.
 Built while learning Flask, with help from AI tools for guidance and debugging
 
 ## How to run
