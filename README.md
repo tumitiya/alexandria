@@ -11,6 +11,7 @@ This is a web app for tracking the manga and shows you're reading or watching: t
 
 ## Built with
 Python, Flask, HTML, CSS, Jinja templates
+Built while learning Flask, with help from AI tools for guidance and debugging
 
 ## How to run
 1. Clone the repo
