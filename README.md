@@ -22,7 +22,8 @@ Built while learning Flask, with help from AI tools for guidance and debugging
 5. Open http://127.0.0.1:5000
 
 ## Screenshot
-<img width="1710" height="1107" alt="image" src="https://github.com/user-attachments/assets/00f683d5-5868-45ed-af01-46e43f2013d7" />
+<img width="1710" height="1107" alt="image" src="https://github.com/user-attachments/assets/9f6de0f3-78b4-4785-a9e7-630bee0268cc" />
+
 
 
 ## Future improvements
