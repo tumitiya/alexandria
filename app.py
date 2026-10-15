@@ -27,6 +27,13 @@ def increment(entry_id):
             entry["progress"] +=1
         return redirect("/")
 
+@app.route("/update/<int:entry_ids>", methods=["POST"])
+def update(entry_id):
+    for entry in entries:
+        if entry["id"] == entry_id:
+            entry["progress"] = int(request.form["progress"])
+    return redirect("/")
+
 @app.route("/delete/<int:entry_id>", methods=["POST"])
 def delete(entry_id):
     global entries
