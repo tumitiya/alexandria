@@ -3,7 +3,7 @@
 This is a web app for tracking the manga and shows you're reading or watching: the title, the site, and the chapter or episode you stopped at.
 
 ## Features
-- Add a manga or show with its site and current chapter or episode
+- Add a manga or show with its site, status and current chapter or episode
 - Update progress with a +1 button or by typing a specific number
 - Delete entries
 - Input validation on the server
