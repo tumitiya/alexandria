@@ -22,7 +22,7 @@
         </form>
         {% for entry in entries %}
         <div class="entry">
-            <p>{{entry.title}}, {{entry.type}}, {{entry.site}}, Chapter/Episode {{entry.progress}}</p>
+            <p>{{entry.title}}, {{entry.type}}, {{entry.status}}, {{entry.site}}, Chapter/Episode {{entry.progress}}</p>
             <div class="actions">
             <form method="post" action="/increment/{{entry.id}}">
                 <button type="submit">+1</button>
