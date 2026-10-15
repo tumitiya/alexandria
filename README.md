@@ -1,6 +1,6 @@
 # Alexandria
 
-This is a web app for tracking the manga and shows you're reading or watching: the title, the site, and the chapter or episode you stopped at.
+This is a web app for tracking the manga and shows you're reading or watching: the title, the site, the status of the manga or show, and the chapter or episode you stopped at.
 
 ## Features
 - Add a manga or show with its site, status and current chapter or episode
