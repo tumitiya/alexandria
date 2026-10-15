@@ -28,4 +28,4 @@ Built while learning Flask, with help from AI tools for guidance and debugging
 ## Future improvements
 - Search and filter
 - User accounts
-- Deploy onlinesgu
+- Deploy online
