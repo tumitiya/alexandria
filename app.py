@@ -34,6 +34,7 @@ def home():
             "id": next_id,
             "title" : request.form["title"],
             "type": request.form["type"],
+            "status": request.form["status"],
             "site": request.form["site"],
             "progress": progress,
         }
